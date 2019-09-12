@@ -74,6 +74,7 @@ Linux 应用安全主要包括安装在 Linux 上的应用的相关安全设置�
 	* 定期备份数据，防止数据丢失
 
 ##6 使用 Linux 安全扫描工具
+Linux 安全扫描工具
 * 使用网络扫描工具 masscan、nmap 扫描和发现对外开放的端口并识别端口对应的应用
 * 使用开源 Web 漏洞扫描工具如 Nikto2、OpenVAS 扫描 Web 漏洞
 * 使用 SQLMap 进行 SQL 注入渗透测试
