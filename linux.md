@@ -103,7 +103,7 @@ root hard nofile 65535
 * soft nofile 65535
 * hard nofile 65535
 ```
-2.3 阿里云数据库服务器 /etc/sysctl.conf  配置实例
+2.3 阿里云 mysql 数据库服务器 /etc/sysctl.conf  配置
 ```
 vm.swappiness = 0
 net.ipv4.neigh.default.gc_stale_time = 120
@@ -168,7 +168,9 @@ net.core.somaxconn=32768
 
 ```
 
-'''
+
+阿里云 mysql 数据库服务器 /etc/sysctl.conf  配置
+```
 
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
