@@ -1,3 +1,26 @@
+# Linux系统
+## Linux启动过程
+1. BIOS: BIOS位于主板上的Rom芯片中，会检查硬件和加载执行MBR中的Bootloader
+2. MBR: Master Boot  Record，主引导记录，存储于磁盘的头部，存储BootLoader程序和分区表信息，加载并执行GRUB
+3. GRUB: 执行/etc/grub.conf 加载内核镜像到内存
+4. Kernel: Kernel运行后会挂载根文件系统rootfs，rootfs主要包含目录 /etc/,  /bin/,  /sbin/,  /lib/,  /dev/
+5. Init: 启动系统初始化进程，Centos7 采用systemd
+6. Runlevel: 不同的运行级别启动不同的服务
+
+## SSH登录原理
+密码口令 登录流程
+1. 客户端连接服务器后，服务器把公钥传给客户端
+2. 客户端输入服务器密码，密码通过公钥加密后传给服务器
+3. 服务器根据自己的私钥解密登录密码，如果正确就允许客户端登录
+
+秘钥 登录流程
+1. 客户端生成RSA（非对称加密算法）公钥 ~/.ssh/id_rsa.pub 和私钥 ~/.ssh/id_rsa
+2. 把客户端的公钥文件内容存放到服务器 ~/.ssh/authorized_keys 文件中
+3. 客户端请求连接服务器，服务器将一个随机字符串发给客户端
+4. 客户端用客户端的私钥加密这个随机字符串之后发给服务器
+5. 服务器接收到加密后的字符串，用客户端的公钥解密，如果正确就让客户端登录，这样就不需要密码了
+
+
 # Linux 内核优化
 
 Linux内核优化需要根据服务器角色的不同按需优化
@@ -38,7 +61,6 @@ root hard nofile 65535
 * hard memlock      unlimited
 * soft memlock      unlimited
 ```
-
 
 ## 2. 内核优化实例
 
