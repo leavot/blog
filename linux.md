@@ -4,7 +4,7 @@ Linux内核优化需要根据服务器角色的不同按需优化
 
 ## 1. 常用的内核优化参数分类和解释
 
-1.1 以下参数都配置在文件 /etc/sysctl.conf 中，系统重启后生效，实际使用时要按需配置
+1.1 配置文件 /etc/sysctl.conf
 ```
 #high-concurrency-tcp-tuning
 fs.file-max = 5000000
@@ -24,10 +24,9 @@ net.ipv4.tcp_max_syn_backlog = 65535
 net.ipv4.tcp_max_tw_buckets = 144000
 
 
-
 ```
 
-1.2 以下参数都配置在文件 /etc/security/limits.conf 中，系统重启后生效,实际使用时要按需配置
+1.2 配置文件 /etc/security/limits.conf
 ```
 # End of file
 #设置软限制和应限制的 打开文件（Open Files）的限制为65535
@@ -44,7 +43,7 @@ root hard nofile 65535
 
 ## 2. 内核优化实例
 
-2.1 阿里云Centos7默认内核优化文件 /etc/sysctl.conf 配置如下
+2.1 配置文件 /etc/sysctl.conf 阿里云Centos7默认配置
 ```
 #vm.swappiness设为0并不会禁止对swap的使用，但会最大限度地降低使用swap的可能性
 vm.swappiness = 0
@@ -94,8 +93,7 @@ kernel.sysrq = 1
 
 ```
 
-2.2 阿里云Centos7默认内核优化文件 /etc/security/limits.conf 配置
-
+2.2  配置文件 /etc/security/limits.conf 阿里云Centos7默认配置
 ```
 # End of file
 root soft nofile 65535
@@ -103,7 +101,7 @@ root hard nofile 65535
 * soft nofile 65535
 * hard nofile 65535
 ```
-2.3 阿里云 mysql 数据库服务器 /etc/sysctl.conf  配置
+2.3  配置文件 /etc/sysctl.conf 某生产环境mysql8 数据库服务器 
 ```
 vm.swappiness = 0
 net.ipv4.neigh.default.gc_stale_time = 120
@@ -165,11 +163,8 @@ vm.vfs_cache_pressure=200
 # redis
 vm.overcommit_memory=1
 net.core.somaxconn=32768
-
 ```
-
-
-阿里云 mysql 数据库服务器 /etc/sysctl.conf  配置
+2.4 配置文件 /etc/sysctl.conf 某生产环境 mysql5.7 数据库服务器
 ```
 
 net.ipv6.conf.all.disable_ipv6 = 1
