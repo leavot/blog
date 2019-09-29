@@ -23,7 +23,6 @@ net.ipv4.ip_local_port_range = 1024  65000
 net.ipv4.tcp_max_syn_backlog = 65535
 net.ipv4.tcp_max_tw_buckets = 144000
 
-
 ```
 
 1.2 配置文件 /etc/security/limits.conf
@@ -223,3 +222,4 @@ net.ipv4.tcp_tw_recycle=0
 参考文档：
 * [Linux实例常用内核网络参数介绍与常见问题处理](https://help.aliyun.com/knowledge_detail/41334.html)
 * [新服务器上架与LINUX操作系统内核参数调优](https://www.cnblogs.com/hai-better/p/10368475.html)
+* [Nginx10m+高并发内核优化详解]https://zhuanlan.zhihu.com/p/59720083
