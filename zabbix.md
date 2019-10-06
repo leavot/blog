@@ -30,5 +30,5 @@ Zabbix在某个事件发生后执行的动作。事件主要指告警事件、�
 ## Zabbix的主要组件
 * Zabbix Server，负责接收Agent发送的监控信息，并进行汇总存储
 * Zabbix Web，Zabbix的GUI组件，提供监控数据的展现和系统配置，主要配置包括监控模板、告警等
-* Proxy
-* Agent
+* Proxy，可选组件，常用于分布式监控环境中，代理Server收集部分被监控端的监控数据并按照一定的频率统一发往Server端
+* Agent，部署在被监控主机上，负责收集本地数据并发往Server端或Agent端，Agent会启动一个名为Agentd的守护进程
