@@ -245,3 +245,4 @@ net.ipv4.tcp_tw_recycle=0
 * [Linux实例常用内核网络参数介绍与常见问题处理](https://help.aliyun.com/knowledge_detail/41334.html)
 * [新服务器上架与LINUX操作系统内核参数调优](https://www.cnblogs.com/hai-better/p/10368475.html)
 * [Nginx10m+高并发内核优化详解](https://zhuanlan.zhihu.com/p/59720083)
+* [运维实践指南-linux基础开源书](https://github.com/meetbill/op_practice_book)
