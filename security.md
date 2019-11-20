@@ -121,6 +121,33 @@ Linux 安全扫描工具主要用于扫描网络开放端口、web漏洞
 
 
 
+## 恶意进程排查实例
+### 现象
+阿里云snat报警连接数大于1000，实际值稳定在1000，阿里云提交工单定位到具体的服务器
+
+### 处理步骤
+1. 查找恶意进程位置
+```
+ps -ef #此命令发现大量运行于一个jenkins容器内的/usr/local/http进程，而且进程id不停改变，无法定位
+top # 此命令发现大量名称为 bbb的进程，而且进程id不停改变，无法定位
+yum install psmisc
+pstree -p -a #此命令查找到大量 bbb进程的父进程，pid不变
+ls /proc/pid  #此目录下的exe指向实际的文件位置，定位到所有bbb进程的父进程的文件位于/tmp/.loss/bbb ，但是文件已经被删除
+```
+2.暂时解决方法
+
+```
+mkdir -p /tmp/.loss
+touch /tmp/.loss/bbb
+chattr -i /tmp/.loss/bbb #创建一个不可修改的文件，组织恶意进程创建这个文件，恶意进程就无法启动了
+
+```
+3.安装clamav扫描病毒
+```
+yum install clamav
+freshclam
+clamscan -r /
+```
 
 
 
