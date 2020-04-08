@@ -25,3 +25,10 @@ kubernetes内部的高级抽象，控制器基于基本对象构建并提供额�
 * Deployment
 * StatefulSet
 * Job
+
+## rancher
+
+
+
+
+* [Rancher2使用2-3个月心得-视频](https://www.bilibili.com/video/av85458368)
