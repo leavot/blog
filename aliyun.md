@@ -51,3 +51,5 @@ NAT网关（ NAT Gateway ）是一款企业级的VPC公网网关，提供NAT代�
 ## NAS
 
 
+## EDAS
+* [制作容器镜像规范](https://helpcdn.aliyun.com/document_detail/84095.html?spm=a2c4g.11186623.6.719.63b75506TR0KKN#section-l2l-spe-ukz)
